@@ -8,10 +8,7 @@ import {
 } from "./types";
 import axios from "axios";
 
-// retrieve itineraries for specific city from database
 export const getItineraries = cityId => dispatch => {
-  console.log(cityId);
-  
   dispatch(setItinerariesLoading());
   axios.get("/api/itineraries/" + cityId).then(res =>
     dispatch({
@@ -27,7 +24,6 @@ export const setItinerariesLoading = () => {
   };
 };
 
-// retrieve activities for specific itinerary from database
 export const getActivities = itinId => dispatch => {
   dispatch(setActivitiesLoading());
   axios.get("/api/activities/" + itinId).then(res =>
@@ -44,19 +40,18 @@ export const setActivitiesLoading = () => {
   };
 };
 
-// retrieve comments for specific itinId from database
-  export const getComments = itinId => dispatch => {
-    dispatch(setCommentsLoading());
-    axios.get("/api/comments/" + itinId).then(res => 
-        dispatch({
-          type: GET_COMMENTS,
-          payload: res.data
-        })
-      );
-  };
+export const getComments = itinId => dispatch => {
+  dispatch(setCommentsLoading());
+  axios.get("/api/comments/" + itinId).then(res =>
+    dispatch({
+      type: GET_COMMENTS,
+      payload: res.data
+    })
+  );
+};
 
-  export const setCommentsLoading = () => {
-    return {
-      type: COMMENTS_LOADING
-    };
+export const setCommentsLoading = () => {
+  return {
+    type: COMMENTS_LOADING
   };
+};

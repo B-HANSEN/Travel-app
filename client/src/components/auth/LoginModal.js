@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import {
   Button,
   Modal,
@@ -11,19 +11,19 @@ import {
   Input,
   NavLink,
   Alert
-} from 'reactstrap';
+} from "reactstrap";
 
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { login } from '../../actions/authActions';
-import { clearErrors } from '../../actions/errorActions';
-import './auth.css';
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { login } from "../../actions/authActions";
+import { clearErrors } from "../../actions/errorActions";
+import "./auth.css";
 
 class LoginModal extends Component {
   state = {
     modal: false,
-    email: '',
-    password: '',
+    email: "",
+    password: "",
     msg: null,
     redirect: false
   };
@@ -39,7 +39,7 @@ class LoginModal extends Component {
     const { error, isAuthenticated } = this.props;
     if (error !== prevProps.error) {
       // Check for register error
-      if (error.id === 'LOGIN_FAIL') {
+      if (error.id === "LOGIN_FAIL") {
         this.setState({ msg: error.msg.msg });
       } else {
         this.setState({ msg: null });
@@ -75,64 +75,71 @@ class LoginModal extends Component {
     this.props.login(user);
   };
 
-
   setRedirect = () => {
-    this.setState({ redirect: true })
-  }
+    this.setState({ redirect: true });
+  };
   renderRedirect = () => {
-    if(this.state.redirect) {
-      return <Redirect to='/' />
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
     }
-  } 
+  };
 
   render() {
-
     return (
       <div>
-        <NavLink onClick={ this.toggle } className="bluehighlight">Login with email</NavLink>
+        <NavLink onClick={this.toggle} className="bluehighlight">
+          Login with email
+        </NavLink>
 
-        <Modal isOpen={ this.state.modal } toggle={ this.toggle }>
-        <ModalHeader toggle={ this.toggle }>Login with email and password</ModalHeader>
-          
+        <Modal isOpen={this.state.modal} toggle={this.toggle}>
+          <ModalHeader toggle={this.toggle}>
+            Login with email and password
+          </ModalHeader>
+
           <ModalBody>
-            {this.state.msg
-              ? <Alert color='danger'>{this.state.msg}</Alert>
-              : null
-            }
+            {this.state.msg ? (
+              <Alert color="danger">{this.state.msg}</Alert>
+            ) : null}
 
+            {/* add form validation */}
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
-                <Label for='email'>Email</Label>
+                {/* add adornment to delete all entries */}
+                <Label for="email">Email</Label>
                 <Input
-                  type='email'
-                  name='email'
-                  id='email'
-                  placeholder='Email'
-                  className='mb-3'
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Please type your Email ID here"
+                  className="mb-3"
                   onChange={this.onChange}
                 />
 
-                <Label for='password'>Password</Label>
+                {/* add adornment to delete all entries */}
+                {/* add adornment to show/ hide password */}
+                <Label for="password">Password</Label>
                 <Input
-                  type='password'
-                  name='password'
-                  id='password'
-                  placeholder='Password'
-                  className='mb-3'
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Please type your Password here"
+                  className="mb-3"
                   onChange={this.onChange}
                 />
 
-                { this.renderRedirect() }
-                <Button to={ '/' } color='dark' style={{ marginTop: '2rem' }} block>
-                    Login
+                {this.renderRedirect()}
+                <Button
+                  to={"/"}
+                  color="dark"
+                  style={{ marginTop: "2rem" }}
+                  block
+                >
+                  Login
                 </Button>
-                
               </FormGroup>
             </Form>
-          </ModalBody>  
-
+          </ModalBody>
         </Modal>
-  
       </div>
     );
   }
@@ -143,4 +150,4 @@ const mapStateToProps = state => ({
   error: state.error
 });
 
-export default connect(mapStateToProps, { login, clearErrors }) (LoginModal);
+export default connect(mapStateToProps, { login, clearErrors })(LoginModal);

@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { returnErrors } from './errorActions';
+import axios from "axios";
+import { returnErrors } from "./errorActions";
 
 import {
   USER_LOADED,
@@ -11,16 +11,16 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   SINGLE_USER
-} from './types';
+} from "./types";
 
- // Headers
- const config = { headers: { 'Content-Type': 'application/json' } };
+// Headers
+const config = { headers: { "Content-Type": "application/json" } };
 
 // ******************** Load User ******************** //
 export const loadUser = () => (dispatch, getState) => {
   dispatch({ type: USER_LOADING });
   axios
-    .get('/api/auth/user', tokenConfig(getState))
+    .get("/api/auth/user", tokenConfig(getState))
     .then(res =>
       dispatch({
         type: USER_LOADED,
@@ -34,10 +34,9 @@ export const loadUser = () => (dispatch, getState) => {
 };
 
 // ******************** Register User ******************** //
-export const register = (user) => dispatch => {
-  
+export const register = user => dispatch => {
   axios
-    .post('/api/users', user, config)
+    .post("/api/users", user, config)
     .then(res =>
       dispatch({
         type: REGISTER_SUCCESS,
@@ -47,7 +46,7 @@ export const register = (user) => dispatch => {
     )
     .catch(err => {
       dispatch(
-        returnErrors(err.response.data, err.response.status, 'REGISTER_FAIL')
+        returnErrors(err.response.data, err.response.status, "REGISTER_FAIL")
       );
       dispatch({ type: REGISTER_FAIL });
     });
@@ -55,11 +54,10 @@ export const register = (user) => dispatch => {
 
 // ******************** Login User ******************** //
 export const login = ({ email, password }) => dispatch => {
-
   // Request body
   const body = JSON.stringify({ email, password });
   axios
-    .post('/api/auth', body, config)
+    .post("/api/auth", body, config)
     .then(res =>
       dispatch({
         type: LOGIN_SUCCESS,
@@ -68,7 +66,7 @@ export const login = ({ email, password }) => dispatch => {
     )
     .catch(err => {
       dispatch(
-        returnErrors(err.response.data, err.response.status, 'LOGIN_FAIL')
+        returnErrors(err.response.data, err.response.status, "LOGIN_FAIL")
       );
       dispatch({ type: LOGIN_FAIL });
     });
@@ -88,33 +86,31 @@ export const tokenConfig = getState => {
 
   // If token, add to headers
   if (token) {
-    config.headers['x-auth-token'] = token;
+    config.headers["x-auth-token"] = token;
   }
   return config;
 };
 
-
 // ****************************** Social media login ****************************** //
 // ******************** Login User ******************** //
 export const loginSocial = ({ email, name }) => dispatch => {
- 
   // Request body
   const body = JSON.stringify({ email, name });
 
   axios
-    .post('/api/users/social', body, config)
-      .then(res =>
-        dispatch({
-          type: LOGIN_SUCCESS,
-          payload: res.data
-        })
-      )
-      .catch(err => {
-        dispatch(
-          returnErrors(err.response.data, err.response.status, 'LOGIN_FAIL')
-        );
-        dispatch({ type: LOGIN_FAIL });
-      });
+    .post("/api/users/social", body, config)
+    .then(res =>
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data
+      })
+    )
+    .catch(err => {
+      dispatch(
+        returnErrors(err.response.data, err.response.status, "LOGIN_FAIL")
+      );
+      dispatch({ type: LOGIN_FAIL });
+    });
 };
 
 // ******************** Social Media Logout ******************** //
@@ -124,20 +120,18 @@ export const logoutSocial = () => {
   return { type: LOGOUT_SUCCESS };
 };
 
-
 // ******************** LOAD SINGLE USER ******************** //
 export const getUserById = userId => dispatch => {
   dispatch(setUserLoading());
-  axios.get("/api/users/" + userId)
-      .then(res =>
-        dispatch({
-          type: SINGLE_USER,
-          payload: res.data
-      })
+  axios.get("/api/users/" + userId).then(res =>
+    dispatch({
+      type: SINGLE_USER,
+      payload: res.data
+    })
   );
 };
 
 // change loading state
 export const setUserLoading = () => {
-  return { type: USER_LOADING }
-}
+  return { type: USER_LOADING };
+};
