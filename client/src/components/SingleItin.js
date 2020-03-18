@@ -6,7 +6,7 @@ import ToLike from "./ToLike";
 import ToUnlike from "./ToUnlike";
 import Comments from "./Comments";
 import ActivitySlider from './activitySlider';
-import { loadUser } from '../Views/Home/actions';
+import { loadUser } from '../containers/Home/actions';
 
 
 
