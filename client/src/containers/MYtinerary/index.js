@@ -9,6 +9,7 @@ import { getCityById } from "../Cities/actions";
 import PropTypes from "prop-types";
 import "../views.css";
 
+
 class MYtinerary extends React.Component {
   state = {
     itineraries: [],

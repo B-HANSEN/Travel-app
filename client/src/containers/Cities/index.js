@@ -6,8 +6,8 @@ import { getCities } from "./actions";
 import Search from "../../components/Search";
 import Footer from "../../components/Footer";
 import { Container, Button, Row, Col } from "reactstrap";
-// import { Button } from "reactstrap";
 import "../views.css";
+
 
 class Cities extends Component {
   state = {

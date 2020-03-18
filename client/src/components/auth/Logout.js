@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { NavLink } from "reactstrap";
 import { connect } from "react-redux";
-// import { logout } from "../../actions/authActions";
 import { logout } from "../../Views/Home/actions";
-
 import PropTypes from "prop-types";
+
 
 export class Logout extends Component {
   state = {

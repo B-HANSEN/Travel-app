@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-// import { addToFavorites, addLikes } from "../actions/favActions";
 import { addToFavorites, addLikes } from "../containers/Favorites/actions";
 import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
