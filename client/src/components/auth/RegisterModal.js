@@ -14,7 +14,7 @@ import {
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 // import { register } from '../../actions/authActions';
-import { register } from '../../Views/Home/actions';
+import { register } from '../../containers/Home/actions';
 // import { clearErrors } from '../../actions/errorActions';
 import { clearErrors } from '../../constants/errorActions';
 import './auth.css';

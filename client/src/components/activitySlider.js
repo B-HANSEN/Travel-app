@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Slider from "react-slick";
 import PropTypes from "prop-types";
-import { getActivities } from "../Views/MYtinerary/actions";
+import { getActivities } from "../containers/MYtinerary/actions";
 import "./components.css";
 
 

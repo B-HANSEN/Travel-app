@@ -15,7 +15,7 @@ import GoogleLogout from 'react-google-login';
 import PropTypes from 'prop-types';
 import RegisterModal from './auth/RegisterModal';
 import LoginModal from './auth/LoginModal';
-import { logoutSocial } from '../Views/Home/actions';
+import { logoutSocial } from '../containers/Home/actions';
 import './components.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import PropTypes from 'prop-types';
-import { getComments } from '../Views/MYtinerary/actions';
+import { getComments } from '../containers/MYtinerary/actions';
 import './singleItin.css';
 
 class Comments extends Component { 
