@@ -12,11 +12,12 @@ import {
   NavLink,
   Alert
 } from "reactstrap";
-
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { login } from "../../actions/authActions";
-import { clearErrors } from "../../actions/errorActions";
+// import { login } from "../../actions/authActions";
+import { login } from "../../Views/Home/actions";
+// import { clearErrors } from "../../actions/errorActions";
+import { clearErrors } from "../../constants/errorActions";
 import "./auth.css";
 
 class LoginModal extends Component {

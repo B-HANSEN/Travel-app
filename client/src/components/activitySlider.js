@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { getActivities } from "../Views/MYtinerary/actions";
 import "./components.css";
 
+
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
