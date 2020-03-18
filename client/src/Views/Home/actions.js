@@ -1,5 +1,5 @@
 import axios from "axios";
-import { returnErrors } from "../../actions/errorActions";
+import { returnErrors } from "../../constants/errorActions";
 import {
   USER_LOADED,
   USER_LOADING,

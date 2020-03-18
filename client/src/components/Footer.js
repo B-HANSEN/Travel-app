@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect, Link } from 'react-router-dom'
-
-// import icon & styles
+import { Redirect, Link } from 'react-router-dom';
 import home from '../files/images/homeIcon.png';
 import './components.css';
 
