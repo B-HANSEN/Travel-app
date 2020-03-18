@@ -1,28 +1,28 @@
-import { GET_ACTIVITIES, ACTIVITIES_LOADING } from "../actions/types";
+// import { GET_ACTIVITIES, ACTIVITIES_LOADING } from "../actions/types";
 
-const initialState = {
-  activities: [],
-  activity: {},
-  loading: false,
-  msg: ""
-};
+// const initialState = {
+//   activities: [],
+//   activity: {},
+//   loading: false,
+//   msg: ""
+// };
 
-export default function(state = initialState, action) {
-  switch (action.type) {
-    case GET_ACTIVITIES:
-      return {
-        ...state,
-        activities: action.payload,
-        loading: false
-      };
+// export default function(state = initialState, action) {
+//   switch (action.type) {
+//     case GET_ACTIVITIES:
+//       return {
+//         ...state,
+//         activities: action.payload,
+//         loading: false
+//       };
 
-    case ACTIVITIES_LOADING:
-      return {
-        ...state,
-        loading: true
-      };
+//     case ACTIVITIES_LOADING:
+//       return {
+//         ...state,
+//         loading: true
+//       };
 
-    default:
-      return state;
-  }
-}
+//     default:
+//       return state;
+//   }
+// }

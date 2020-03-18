@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { removeFromFavorites, removeLikes } from "../actions/favActions";
-
+// import { removeFromFavorites, removeLikes } from "../actions/favActions";
+import { removeFromFavorites, removeLikes } from "../Views/Favorites/actions";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";

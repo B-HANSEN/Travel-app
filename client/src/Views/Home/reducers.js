@@ -7,7 +7,7 @@ import {
     LOGOUT_SUCCESS,
     REGISTER_SUCCESS,
     REGISTER_FAIL
-  } from "../../actions/types";
+  } from "../../constants/actionTypes";
   
   const initialState = {
     token: localStorage.getItem("token"),

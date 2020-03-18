@@ -1,8 +1,11 @@
-import { GET_FAVORITES, FAVORITES_LOADING, FAVORITE_COUNT } from "../../actions/types";
+import { GET_FAVORITES, FAVORITES_LOADING, FAVORITE_COUNT } from "../../constants/actionTypes";
 
 import axios from "axios";
-import { loadUser } from "./authActions";
-import { getItineraries } from "./itActions";
+// import { loadUser } from "./authActions";
+import { loadUser } from "../Home/actions";
+// import { getItineraries } from "./itActions";
+import { getItineraries } from "../MYtinerary/actions";
+
 
 // retrieve favorites for specific user from database
 export const getFavorites = userId => dispatch => {

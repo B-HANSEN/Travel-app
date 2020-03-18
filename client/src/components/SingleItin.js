@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './singleItin.css';
 import PropTypes from 'prop-types';
-
 import ToLike from "./ToLike";
 import ToUnlike from "./ToUnlike";
 import Comments from "./Comments";
 import ActivitySlider from './activitySlider';
-import { loadUser } from '../actions/authActions';
+import { loadUser } from '../Views/Home/actions';
+
 
 
 // stateless comp always receive props

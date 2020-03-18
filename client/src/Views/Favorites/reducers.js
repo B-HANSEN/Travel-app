@@ -2,7 +2,7 @@ import {
     GET_FAVORITES,
     FAVORITES_LOADING,
     FAVORITE_COUNT
-  } from "../../actions/types";
+  } from "../../constants/actionTypes";
   
   const initialState = {
     favorites: [],

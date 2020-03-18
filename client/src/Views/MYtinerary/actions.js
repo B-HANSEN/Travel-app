@@ -5,7 +5,7 @@ import {
     ACTIVITIES_LOADING,
     GET_COMMENTS,
     COMMENTS_LOADING
-  } from "../../actions/types";
+  } from "../../constants/actionTypes";
   import axios from "axios";
   
   export const getItineraries = cityId => dispatch => {

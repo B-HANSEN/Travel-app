@@ -2,19 +2,13 @@ import React, { Component } from "react";
 import { Route, BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
-import { loadUser } from "./actions/authActions";
+import { loadUser } from "./Views/Home/actions"
 import Headers from "./components/Headers";
-// import Home from "./Views/Home";
-// import CreateItinerary from "./Views/CreateItinerary";
-// import MYtinerary from "./Views/MYtinerary";
-import Cities from "./Views/Cities/";
-// import Favorites from "./Views/Favorites";
-
-
 import Home from "./Views/Home/";
+import Cities from "./Views/Cities/";
 import CreateItinerary from "./Views/CreateItinerary/";
 import MYtinerary from "./Views/MYtinerary/";
-import Favorites from "./Views/Favorites/index.js";
+import Favorites from "./Views/Favorites/";
 
 // configure enzyme to use adapter
 // import Enzyme from 'enzyme';

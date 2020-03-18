@@ -1,4 +1,5 @@
-import { GET_CITIES, CITIES_LOADING, SINGLE_CITY } from "../../actions/types";
+// import { GET_CITIES, CITIES_LOADING, SINGLE_CITY } from "../../actions/types";
+import { GET_CITIES, CITIES_LOADING, SINGLE_CITY } from "../../constants/actionTypes";
 import axios from "axios";
 
 export const getCities = () => dispatch => {

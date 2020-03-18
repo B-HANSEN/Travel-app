@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 import { getCities } from "./actions";
 import Search from "../../components/Search";
 import Footer from "../../components/Footer";
-import { Container, Row, Col } from "reactstrap";
-import { Button } from "reactstrap";
+import { Container, Button, Row, Col } from "reactstrap";
+// import { Button } from "reactstrap";
 import "../views.css";
 
 class Cities extends Component {

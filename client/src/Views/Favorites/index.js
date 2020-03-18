@@ -2,8 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import Footer from "../../components/Footer";
 import SingleItin from "../../components/SingleItin";
-import { getFavorites } from "../../actions/favActions";
-import { getUserById } from "../../actions/authActions";
+// import { getFavorites } from "../../actions/favActions";
+import { getFavorites } from "../Favorites/actions";
+// import { getUserById } from "../../actions/authActions";
+import { getUserById } from "../Home/actions";
+
 import PropTypes from "prop-types";
 import "../views.css";
 
