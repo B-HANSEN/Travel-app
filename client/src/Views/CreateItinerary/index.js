@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "../components/Footer";
-import "./views.css";
+import Footer from "../../components/Footer";
+import "../views.css";
 
 const CreateItinerary = () => {
   return (

@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
-import cityReducer from "./cityReducer";
+// import cityReducer from "./cityReducer";
+import cityReducer from "../Views/Cities/reducers";
 import itReducer from "./itReducer";
 import actReducer from "./actReducer";
 import errorReducer from "./errorReducer";

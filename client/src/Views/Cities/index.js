@@ -2,14 +2,12 @@ import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-
-import { getCities } from "../actions/citiesActions";
-import Search from "../components/Search";
-import Footer from "./../components/Footer";
-
+import { getCities } from "./actions";
+import Search from "../../components/Search";
+import Footer from "../../components/Footer";
 import { Container, Row, Col } from "reactstrap";
 import { Button } from "reactstrap";
-import "./views.css";
+import "../views.css";
 
 class Cities extends Component {
   state = {

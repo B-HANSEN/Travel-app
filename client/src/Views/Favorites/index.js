@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import Footer from "./../components/Footer";
-import SingleItin from "../components/SingleItin";
-import { getFavorites } from "../actions/favActions";
-import { getUserById } from "../actions/authActions";
+import Footer from "../../components/Footer";
+import SingleItin from "../../components/SingleItin";
+import { getFavorites } from "../../actions/favActions";
+import { getUserById } from "../../actions/authActions";
 import PropTypes from "prop-types";
-import "./views.css";
+import "../views.css";
 
 class Favorites extends React.Component {
   state = {

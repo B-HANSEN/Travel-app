@@ -1,13 +1,14 @@
 import React from "react";
 import { Redirect, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import Footer from "./../components/Footer";
+import Footer from "../../components/Footer";
 import { TinyButton as ScrollUpButton } from "react-scroll-up-button";
-import SingleItin from "../components/SingleItin";
-import { getItineraries } from "../actions/itActions";
-import { getCityById } from "../actions/citiesActions";
+import SingleItin from "../../components/SingleItin";
+import { getItineraries } from "../../actions/itActions";
+// import { getCityById } from "../actions/citiesActions";
+import { getCityById } from "../Cities/actions";
 import PropTypes from "prop-types";
-import "./views.css";
+import "../views.css";
 
 class MYtinerary extends React.Component {
   state = {

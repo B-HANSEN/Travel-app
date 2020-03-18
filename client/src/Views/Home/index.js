@@ -2,13 +2,13 @@ import React from "react";
 import { Redirect, Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import RegisterModal from "./../components/auth/RegisterModal";
-import LoginModal from "./../components/auth/LoginModal";
-import { loginSocial } from "./../actions/authActions";
-import Footer from "./../components/Footer";
-import logo from "../files/images/MYtineraryLogo.png";
-import arrow from "../files/images/circled-right-2.png";
-import "./views.css";
+import RegisterModal from "../../components/auth/RegisterModal";
+import LoginModal from "../../components/auth/LoginModal";
+import { loginSocial } from "../../actions/authActions";
+import Footer from "../../components/Footer";
+import logo from "../../files/images/MYtineraryLogo.png";
+import arrow from "../../files/images/circled-right-2.png";
+import "../views.css";
 import GoogleLogin from "react-google-login";
 import PropTypes from "prop-types";
 
