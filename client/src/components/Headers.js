@@ -2,7 +2,9 @@ import React from "react";
 import "react-sticky-header/styles.css";
 import StickyHeader from "react-sticky-header";
 import AppNavbar from "./AppNavbar";
-import "./components.css";
+// import "./components.css";
+import '../constants/styles.css'
+
 
 
 const Headers = () => (

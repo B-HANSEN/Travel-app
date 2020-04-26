@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import Slider from "react-slick";
 import PropTypes from "prop-types";
 import { getActivities } from "../containers/MYtinerary/actions";
-import "./components.css";
+// import "./components.css";
+import '../constants/styles.css'
 
 
 function SampleNextArrow(props) {

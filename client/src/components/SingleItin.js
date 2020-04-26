@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './singleItin.css';
+// import './singleItin.css';
+import '../constants/styles.css'
 import PropTypes from 'prop-types';
 import ToLike from "./ToLike";
 import ToUnlike from "./ToUnlike";

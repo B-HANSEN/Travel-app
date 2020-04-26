@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import PropTypes from 'prop-types';
 import { getComments } from '../containers/MYtinerary/actions';
 import './singleItin.css';
+import '../constants/styles.css'
+
 
 class Comments extends Component { 
     state = {

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import home from '../files/images/homeIcon.png';
-import './components.css';
-
+import '../constants/styles.css'
 
 class Footer extends Component { 
   state = { redirect: false }
