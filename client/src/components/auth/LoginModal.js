@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import {
-  Button,
   Modal,
   ModalHeader,
   ModalBody,
@@ -9,15 +8,14 @@ import {
   FormGroup,
   Label,
   Input,
-  NavLink,
-  Alert
+  Alert,
 } from "reactstrap";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login } from "../../containers/Home/actions";
 import { clearErrors } from "../../constants/errorActions";
-import "./auth.css";
-
+import Button from "@material-ui/core/Button";
+import { Typography } from "@material-ui/core";
 
 class LoginModal extends Component {
   state = {
@@ -25,14 +23,14 @@ class LoginModal extends Component {
     email: "",
     password: "",
     msg: null,
-    redirect: false
+    redirect: false,
   };
 
   static propTypes = {
     isAuthenticated: PropTypes.bool,
     error: PropTypes.object.isRequired,
     login: PropTypes.func.isRequired,
-    clearErrors: PropTypes.func.isRequired
+    clearErrors: PropTypes.func.isRequired,
   };
 
   componentDidUpdate(prevProps) {
@@ -58,15 +56,15 @@ class LoginModal extends Component {
     // Clear errors
     this.props.clearErrors();
     this.setState({
-      modal: !this.state.modal
+      modal: !this.state.modal,
     });
   };
 
-  onChange = e => {
+  onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
     const { email, password } = this.state;
     const user = { email, password };
@@ -86,10 +84,12 @@ class LoginModal extends Component {
 
   render() {
     return (
-      <div>
-        <NavLink onClick={this.toggle} className="bluehighlight">
-          Login with email
-        </NavLink>
+      <>
+        <Button onClick={this.toggle} variant="outlined">
+          <Typography color="textSecondary" variant="p">
+            Login with email
+          </Typography>
+        </Button>
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>
@@ -140,14 +140,14 @@ class LoginModal extends Component {
             </Form>
           </ModalBody>
         </Modal>
-      </div>
+      </>
     );
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
-  error: state.error
+  error: state.error,
 });
 
 export default connect(mapStateToProps, { login, clearErrors })(LoginModal);
