@@ -39,7 +39,7 @@ class UploadPreview extends React.Component {
         <input type="file" onChange={this.onChange} />
         {this.state.file && (
           <div style={{ textAlign: "center" }}>
-            {/* <button onClick={this.resetFile}>Remove File</button> */}
+            <Button onClick={this.resetFile}>Remove File</Button>
           </div>
         )}
         <img style={{ width: "100%" }} src={this.state.file} alt="" />
