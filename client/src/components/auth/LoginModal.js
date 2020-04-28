@@ -16,6 +16,8 @@ import { login } from "../../containers/Home/actions";
 import { clearErrors } from "../../constants/errorActions";
 import Button from "@material-ui/core/Button";
 import { Typography } from "@material-ui/core";
+import ColorButton from "../NewButton";
+
 
 class LoginModal extends Component {
   state = {
@@ -85,11 +87,11 @@ class LoginModal extends Component {
   render() {
     return (
       <>
-        <Button onClick={this.toggle} variant="outlined">
-          <Typography color="textSecondary" variant="p">
+        <ColorButton onClick={this.toggle} variant="contained">
+          <Typography variant="p">
             Login with email
           </Typography>
-        </Button>
+        </ColorButton>
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>

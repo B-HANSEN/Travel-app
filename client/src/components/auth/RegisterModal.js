@@ -14,7 +14,9 @@ import PropTypes from "prop-types";
 import { register } from "../../containers/Home/actions";
 import { clearErrors } from "../../constants/errorActions";
 import Button from "@material-ui/core/Button";
-import { Typography } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
+import ColorButton from "../NewButton";
+import "../../constants/styles.css";
 
 class UploadPreview extends React.Component {
   constructor(props) {
@@ -90,7 +92,7 @@ class RegisterModal extends Component {
     this.setState({ fileInputElement: file });
   };
 
-  // opemn & close the modal
+  // open & close the modal
   toggle = () => {
     // Clear errors
     this.props.clearErrors();
@@ -124,14 +126,11 @@ class RegisterModal extends Component {
   render() {
     return (
       <>
-        <Button
-          onClick={this.toggle}
-          variant="outlined"
-        >
-          <Typography color="textSecondary" variant="p">
+        <ColorButton onClick={this.toggle} variant="contained">
+          <Typography className="newButtonsText" variant="p">
             Register here
           </Typography>
-        </Button>
+        </ColorButton>
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>Register</ModalHeader>
